@@ -1,0 +1,371 @@
+<!--
+============================================================
+    WEB PORTOFOLIO LORD BAHLIL (EDISI SPESIAL OPLOSAN)
+    Dalang Codingan: Ryan
+    Tanggal Rilis: Desember 2025
+============================================================
+
+STACK YANG DIPAKE (BIAR GACOR):
+
+TEKNOLOGI:
+- HTML5 (Kerangka doang, basic lah)
+- CSS3 (Pake Custom Properties biar gampang ganti warna partai, canda)
+- JavaScript ES6+ 
+
+CDN LIBRARIES:
+- Google Fonts (Biar font-nya estetik, gak kaku kayak pejabat)
+- Font Awesome 6.4.0 (Ikon-ikon)
+- GSAP 3.12.2 (Animasi kelas kakap, bikin smooth parah)
+- GSAP ScrollTrigger (Animasi yang muncul pas di-scroll)
+- ScrollReveal.js (Biar elemennya nongol kaget-kaget gitu)
+- Vanilla Tilt.js 1.8.0 (Efek 3D goyang-goyang dombret)
+
+LIST ANIMASI:
+- Kursor yang ngikutin mouse (Obsesif banget sama gw)
+- Intro Hero section yang dramatis
+- Angka statistik nambah sendiri (Mirip suara pemilu... eh)
+- Background cairan Oplosan (Liquid orb)
+- Efek ngetik ala Hacker (Biar kelihatan pinter)
+- Menu Hamburger (Bisa berubah bentuk, bukan makanan)
+
+FITUR-FITUR:
+- Responsif di HP, Tablet, Laptop (Anti nge-bug di layar kecil)
+- Dark Mode + Aksen Emas (Vibes Orang Kaya Lama)
+- Efek Kaca (Glassmorphism) biar transparan kayak... anggaran? Ups.
+- Terminal palsu buat output data
+- Form kontak yang langsung preview (Real-time abis)
+- Welcome modal dengan sapaan dinamis
+============================================================
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bahlil | The Oplosan Master</title>
+
+    <!-- Google Fonts (Am bil dari gudang Google) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Ikon-ikon Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- CSS Atur Desain Website -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Elemen Kursor Gaya-gayaan -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Welcome Modal (Tanya Nama User) -->
+    <div id="welcomeModal" class="welcome-modal">
+        <div class="welcome-card">
+            <div class="welcome-glow"></div>
+            <div class="welcome-icon">
+                <i class="fas fa-hand-wave"></i>
+            </div>
+            <h2>Welcome to Bahlil SANG OPLOSAN!</h2>
+            <p>Boleh kenalin dulu sama kita? 😊</p>
+            <form id="welcomeForm">
+                <div class="name-input-wrapper">
+                    <input type="text" id="userName" placeholder="Masukkan nama kamu..." required autocomplete="off">
+                    <span class="input-underline"></span>
+                </div>
+                <button type="submit" class="welcome-btn">
+                    <span>Let's Go!</span>
+                    <i class="fas fa-rocket"></i>
+                </button>
+            </form>
+            <p class="skip-text">Atau klik di luar untuk lewati</p>
+        </div>
+    </div>
+
+    <!-- Navigasi Bar (Biar User Gak Nyasar) -->
+    <nav class="navbar">
+        <div class="logo">BAHLIL<span class="highlight">.OPLOS</span></div>
+        <ul class="nav-links">
+            <li><a href="#home" class="nav-item">Home</a></li>
+            <li><a href="#about" class="nav-item">About</a></li>
+            <li><a href="#portfolio" class="nav-item">Prestasi</a></li>
+            <li><a href="#headquarter" class="nav-item">HQ</a></li>
+            <li><a href="#contact" class="nav-item">Kontak</a></li>
+        </ul>
+        <!-- Tombol Hamburger buat yang buka di HP -->
+        <div class="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Bagian Hero -->
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <!-- Greeting Text Dinamis -->
+                <p class="greeting-text">Halo, Guest! Welcome to</p>
+                <h1 class="hero-title">
+                    <span class="word">Bahlil</span>
+                    <span class="word">Seorang</span>
+                    <span class="word">Master</span>
+                    <span class="word highlight-glitch" data-text="OPLOSAN">OPLOSAN</span>
+                </h1>
+                <p class="hero-subtitle">Inovasi Pertamax dengan sentuhan "Oplosan".</p>
+                <div class="hero-cta">
+                    <a href="#portfolio" class="btn btn-primary">View Portfolio</a>
+                    <a href="#about" class="btn btn-secondary">Profile</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <!-- Background Cairan Oplosan (Muter-muter pusing) -->
+                <div class="liquid-orb"></div>
+            </div>
+        </section>
+
+        <!-- Bagian About (Siapa sih dia?) -->
+        <section id="about" class="about">
+            <div class="container">
+                <h2 class="section-title" data-scroll>Siapa <span class="highlight">Bahlil?</span></h2>
+                <div class="about-grid">
+                    <div class="about-text" data-scroll>
+                        <p>Seorang visioner di bidang manipulasi energi. Dikenal karena teknik inovatifnya "Oplosan
+                            Bensin," yang mengubah Pertamax biasa menjadi sesuatu yang... tak terduga.</p>
+                        <!-- Statistik -->
+                        <ul class="stats">
+                            <li>
+                                <span class="stat-number" data-count="99">0</span>%
+                                <span class="stat-label">ETANOL MENINGKAT</span>
+                            </li>
+                            <li>
+                                <span class="stat-number" data-count="1000">0</span>+
+                                <span class="stat-label">Kerusakan Mesin Kendaraan</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="about-image" data-scroll>
+                        <div class="image-card">
+                            <img src="img/Bahli_Love_Forever.png" alt="Bahlil">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Portfolio (Daftar Dosa... Eh Prestasi) -->
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title" data-scroll>Bahlil <span class="highlight">Prestasi</span></h2>
+                <!-- Kartu Portfolio Goyang 3D (Pake Vanilla Tilt) -->
+                <div class="portfolio-grid">
+                    <div class="portfolio-card" data-tilt>
+                        <div class="card-content">
+                            <h3>LEDAKAN ADALAH SENI</h3>
+                            <p>Ahli dalam membakar Kilang Minyak, berujuan untuk Import Minyak untuk menjadi ladang
+                                Korupsi</p>
+                            <div class="tags">
+                                <span>Innovation</span>
+                                <span>Pertamina</span>
+                                <span>Seni Ledakan</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card" data-tilt>
+                        <div class="card-content">
+                            <h3>Pemenang Liga Korupsii</h3>
+                            <p>Pertamina memenangkan Liga Korupsii di peringkat pertama dengan jumlah kerugian 969
+                                Triliun</p>
+                            <div class="tags">
+                                <span>Pertamina</span>
+                                <span>Liga Korupsii</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-card" data-tilt>
+                        <div class="card-content">
+                            <h3>Oplosan</h3>
+                            <p>Oplosan adalah seni yang mengubah pertamax menjadi sesuatu yang tidak terduga yang
+                                membuat Customer bahagiah sampai menangis.</p>
+                            <div class="tags">
+                                <span>Oplosan</span>
+                                <span>Seni Oplosan</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Our Headquarter (Alamat Kantor Pusat) -->
+        <section id="headquarter" class="headquarter">
+            <div class="container">
+                <h2 class="section-title" data-scroll>Our <span class="highlight">Headquarter</span></h2>
+                <div class="headquarter-wrapper">
+                    <div class="headquarter-card">
+                        <div class="card-glow"></div>
+                        <div class="headquarter-header">
+                            <div class="building-icon">
+                                <i class="fas fa-building"></i>
+                            </div>
+                            <div>
+                                <h3>Grha Pertamina</h3>
+                                <p class="building-subtitle">Kantor Pusat OPLOSAN</p>
+                            </div>
+                        </div>
+                        <div class="headquarter-body">
+                            <div class="info-row">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <div class="info-text">
+                                    <span class="label">Alamat</span>
+                                    <p>Jl. Medan Merdeka Timur No. 1A, RT.2/RW.1</p>
+                                    <p>Gambir, Kecamatan Gambir</p>
+                                    <p>Kota Jakarta Pusat, DKI Jakarta 10110</p>
+                                </div>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-phone-alt"></i>
+                                <div class="info-text">
+                                    <span class="label">Telepon</span>
+                                    <p>+62 21 3815 111</p>
+                                </div>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-envelope"></i>
+                                <div class="info-text">
+                                    <span class="label">Email</span>
+                                    <p>info@pertamina.com</p>
+                                </div>
+                            </div>
+                            <div class="info-row">
+                                <i class="fas fa-clock"></i>
+                                <div class="info-text">
+                                    <span class="label">Jam Operasional</span>
+                                    <p>Senin - Jumat: 08:00 - 17:00 WIB</p>
+                                    <p>Sabtu - Minggu: Tutup</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="headquarter-footer">
+                            <a href="https://maps.google.com/?q=Grha+Pertamina+Jakarta" target="_blank" class="map-btn">
+                                <i class="fas fa-map-marked-alt"></i>
+                                <span>Lihat di Maps</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Bagian Kontak (Tempat Sambat) -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title" data-scroll>Kirim <span class="highlight">Pesan</span></h2>
+                <div class="contact-grid">
+                    <!-- Kartu Form Kaca (Glassmorphism) -->
+                    <div class="form-card">
+                        <div class="form-card-glow"></div>
+                        <h3 class="form-title"><i class="fas fa-envelope"></i> Message Us</h3>
+                        <form id="contactForm" class="premium-form">
+                            <div class="input-group">
+                                <label>Nama</label>
+                                <div class="input-wrapper">
+                                    <input type="text" id="name" placeholder="Masukkan nama" required>
+                                    <span class="input-line"></span>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Tanggal Lahir</label>
+                                <div class="input-wrapper">
+                                    <input type="date" id="dob" required>
+                                    <span class="input-line"></span>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Jenis Kelamin</label>
+                                <div class="gender-options">
+                                    <label class="gender-option">
+                                        <input type="radio" name="gender" value="Laki-Laki" required>
+                                        <span class="gender-box"><i class="fas fa-mars"></i> Laki-Laki</span>
+                                    </label>
+                                    <label class="gender-option">
+                                        <input type="radio" name="gender" value="Perempuan">
+                                        <span class="gender-box"><i class="fas fa-venus"></i> Perempuan</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <label>Pesan</label>
+                                <div class="input-wrapper">
+                                    <textarea id="message" placeholder="Tulis pesan..." required></textarea>
+                                    <span class="input-line"></span>
+                                </div>
+                            </div>
+                            <button type="submit" class="submit-btn">
+                                <span>Submit</span>
+                                <i class="fas fa-arrow-right"></i>
+                            </button>
+                        </form>
+                    </div>
+                    <!-- Layar Output ala Hacker Terminal -->
+                    <div class="terminal-card">
+                        <div class="terminal-header">
+                            <div class="terminal-dots">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                            </div>
+                            <span class="terminal-title">output.terminal</span>
+                        </div>
+                        <div class="terminal-body">
+                            <div class="terminal-line">
+                                <span class="prompt">$</span>
+                                <span class="command">./display_info</span>
+                            </div>
+                            <div class="terminal-output">
+                                <p class="output-line"><span class="key">timestamp</span>: <span id="outTime"
+                                        class="val">awaiting input...</span></p>
+                                <p class="output-line"><span class="key">name</span>: <span id="outName"
+                                        class="val">--</span></p>
+                                <p class="output-line"><span class="key">birth_date</span>: <span id="outDob"
+                                        class="val">--</span></p>
+                                <p class="output-line"><span class="key">gender</span>: <span id="outGender"
+                                        class="val">--</span></p>
+                                <p class="output-line"><span class="key">message</span>: <span id="outMessage"
+                                        class="val">--</span></p>
+                            </div>
+                            <div class="terminal-cursor">
+                                <span class="prompt">$</span>
+                                <span class="blink">_</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer (Kaki Halaman) -->
+    <footer>
+        <p>&copy; 2025 Oplosan Bensin Corp (WKWKWKWK). All rights reserved.</p>
+    </footer>
+
+    <!-- Library JavaScript -->
+    <!-- GSAP - Buat animasi smooth -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <!-- GSAP ScrollTrigger - Buat trigger pas scroll -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <!-- ScrollReveal.js - Animasi reveal sederhana -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <!-- Vanilla Tilt.js - Efek 3D mouse -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+    <!-- Script Buatan Sendiri (Logic Utama) -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
